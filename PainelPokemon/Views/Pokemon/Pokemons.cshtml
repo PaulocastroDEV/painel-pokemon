@@ -1,0 +1,38 @@
+﻿@model List<PokemonUnity>
+
+
+@{
+    ViewData["Title"] = "Pokemons";
+}
+
+<div>
+    <h2 class="display-4">Pokemons</h2>
+    <form asp-controller="pOKEM" asp-action="Index">
+        
+        <hr />
+    </form>
+    @if (Model != null)
+    {
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr> 
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Weight)</td>
+                        <td><img src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)"></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+</div>
