@@ -4,6 +4,7 @@ using PainelPokemon.Models;
 using PainelPokemon.Repositories;
 using System.Diagnostics;
 
+
 namespace PainelPokemon.Controllers
 {
     public class PokemonController : Controller
@@ -20,17 +21,23 @@ namespace PainelPokemon.Controllers
 
 
         [HttpGet("")]
-        public IActionResult Pokemons()
+        public IActionResult Pokemons(string? urlPast)
         {
-            var url = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20";
+            var url= "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20";
+            if (urlPast != null)
+            {
+                url = urlPast;
+            }
+            
             HttpClient client = new HttpClient();
             var pokemons = _pokemonRepository.GetAll(url,client);
-            var pokemonResults = new List<PokemonUnity>();
+            PokemonsResults pokemonResults = new PokemonsResults();
+            pokemonResults.Pokemons=pokemons;
 
             foreach (var pokemonResult in pokemons.Results){
 
                 var pokemon = _pokemonRepository.GetOne(pokemonResult.Url, client);
-                pokemonResults.Add(pokemon);
+                pokemonResults.Pokemon.Add(pokemon);
             }
             return View(pokemonResults);
 

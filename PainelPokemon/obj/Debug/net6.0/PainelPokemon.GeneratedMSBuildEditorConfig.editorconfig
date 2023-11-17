@@ -16,14 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\temp\ws-pokemon\PainelPokemon\PainelPokemon
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/temp/ws-pokemon/PainelPokemon/PainelPokemon/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/temp/ws-pokemon/PainelPokemon/PainelPokemon/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/temp/ws-pokemon/PainelPokemon/PainelPokemon/Views/Pokemon/Pokemons.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9rZW1vblxQb2tlbW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

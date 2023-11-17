@@ -1,4 +1,7 @@
-﻿@model List<PokemonUnity>
+﻿
+@model PokemonsResults;
+
+
 
 
 @{
@@ -7,10 +10,7 @@
 
 <div>
     <h2 class="display-4">Pokemons</h2>
-    <form asp-controller="pOKEM" asp-action="Index">
-        
-        <hr />
-    </form>
+    
     @if (Model != null)
     {
         <table class="table table-bordered table-striped table-sm">
@@ -23,16 +23,23 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach (var item in Model.Pokemon)
                 {
                     <tr> 
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.Weight)</td>
-                        <td><img src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)"></td>
+                        <td><img src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)"></td> 
                     </tr>
                 }
             </tbody>
         </table>
+        
     }
-
+    <a asp-controller="Pokemon" asp-action="Pokemons" asp-route-urlPast="@Model?.Pokemons.Previous">
+        <button class="btn-warning" type="submit">Previous</button>
+    </a>
+    <a asp-controller="Pokemon" asp-action="Pokemons" asp-route-urlPast="@Model?.Pokemons.Next">
+        <button class= "btn-primary" type="submit">Next</button>
+    </a>
+  
 </div>
