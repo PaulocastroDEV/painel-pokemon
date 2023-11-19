@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@model PainelPokemon.Models.Users.User;
+
+<form method="post">
+    <div class="form-group col-3">
+        <label asp-for="Email">Email:</label>
+        <input class ="form-control" asp-for="Email" />
+    </div>
+    <br />
+    <div class="form-group col-3">
+        <label asp-for="Password">Password:</label>
+        <input class="form-control" asp-for="Password" type="password" />
+       
+     </div>
+    <br />
+    <div class="form-group col-3">
+        <button class="btn-success" type="submit">Login</button>
+    </div>
+    
+</form>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <p style="color: red;">@ViewBag.ErrorMessage</p>
+}

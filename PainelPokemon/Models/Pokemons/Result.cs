@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace PainelPokemon.Models
+namespace PainelPokemon.Models.Pokemons
 {
     public class Result
     {
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("url")]
-        public Uri Url { get;  set; }
+        public Uri Url { get; set; }
     }
 }

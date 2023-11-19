@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,7 +25,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Pokemon" asp-action="Pokemons">Home</a>
                         </li>
-                       
+
+                        @{
+                            var userId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
+                        }
+
+
+                        @if (!string.IsNullOrEmpty(userId))
+                        {
+                            <td>
+                                <a class ="nav-link text-dark" asp-controller="Pokemon" asp-action="Favorite" asp-action="Favorite">
+                                    Favoritos
+                                </a>
+                            </td>
+                            <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout" asp-action="Logout">
+                                Sair
+                            </a>
+                        }
+                        else
+                        {
+                            <td>
+                                <a class="nav-link text-dark" asp-controller="Account" asp-action="Login" asp-action="Login">
+                                    Login
+                                </a>
+                            </td>
+                        }
                     </ul>
                 </div>
             </div>

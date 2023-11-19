@@ -1,13 +1,16 @@
-﻿@model PainelPokemon.Models.Pokemons.PokemonsResults;
-
+﻿
+@model List<PainelPokemon.Models.Pokemons.PokemonUnity>;
 @using Microsoft.AspNetCore.Http
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+
 @{
-    ViewData["Title"] = "Pokemons";
+    ViewData["Title"] = "Pokemons Favoritos";
 }
 
 <div>
-    <h2 class="display-4">Pokemons</h2>
+    <h2 class="display-4">Pokemons Favoritos</h2>
     
     @if (Model != null)
     {
@@ -21,13 +24,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.Pokemon)
+                @foreach (var item in Model)
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Id)</td>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.Weight)</td>
                         <td><img src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)"></td>
+
                         @{
                             var userId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
                         }
@@ -36,26 +40,16 @@
                         @if (!string.IsNullOrEmpty(userId))
                         {
                             <td>
-                                <a asp-controller="Pokemon" asp-action="AddFavoritePokemon" asp-route-id="@item.Id">
-                                    <button class="btn-warning" type="submit">Favoritar</button>
+                                <a asp-controller="Pokemon" asp-action="RemoveFavorite" asp-route-id="@item.Id">
+                                    <button class="btn-danger" type="submit">Remover</button>
                                 </a>
                             </td>
                         }
-                       
-                        
                     </tr>
                 }
             </tbody>
         </table>
         
     }
-
-
-    <a asp-controller="Pokemon" asp-action="Pokemons" asp-route-urlPast="@Model?.Pokemons.Previous">
-        <button class="btn-warning" type="submit">Previous</button>
-    </a>
-    <a asp-controller="Pokemon" asp-action="Pokemons" asp-route-urlPast="@Model?.Pokemons.Next">
-        <button class= "btn-primary" type="submit">Next</button>
-    </a>
   
 </div>

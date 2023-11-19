@@ -1,4 +1,4 @@
-﻿using PainelPokemon.Models;
+﻿using PainelPokemon.Models.Pokemons;
 
 namespace PainelPokemon.Repositories
 {
