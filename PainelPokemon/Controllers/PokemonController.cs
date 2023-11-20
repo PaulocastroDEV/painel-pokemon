@@ -111,7 +111,7 @@ namespace PainelPokemon.Controllers
         {
 
 
-            var url= "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=10";
+            var url= "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=12";
             if (urlPast != null)
             {
                 url = urlPast;

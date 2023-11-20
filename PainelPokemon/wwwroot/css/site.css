@@ -16,3 +16,230 @@ html {
 body {
   margin-bottom: 60px;
 }
+.card {
+    width: 18rem; 
+    height: 80%; 
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    margin:0px;
+}
+
+.card-title {
+    text-transform: capitalize;
+}
+.card-body{
+    display:flex;
+    flex-direction:column;
+}
+
+.card-text{
+    display:flex;
+    justify-content:space-between;
+
+}
+
+
+.card-img-top.grass {
+    background: #49D0B0 url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+
+.card-text button.grass {
+    background: #49D0B0;
+    border: 1px solid #49D0B0;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.bug {
+    background: #8ad049 url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.bug {
+    background: #8ad049;
+    border: 1px solid #8ad049;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.normal {
+    background: #be69c7 url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.normal {
+    background: #be69c7;
+    border: 1px solid #be69c7;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.fairy {
+    background: #db749f url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.fairy {
+    background: #db749f;
+    border: 1px solid #db749f;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.fire {
+    background: #f05267 url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.fire {
+    background: #f05267;
+    border: 1px solid #f05267;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.water {
+    background: #44bce0 url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.water {
+    background: #44bce0;
+    border: 1px solid #44bce0;
+    border-radius: 10%;
+    list-style: none;
+}
+.card-img-top.electric {
+    background: rgb(223, 235, 67) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.electric {
+    background: rgb(223, 235, 67);
+    border: 1px solid rgb(223, 235, 67);
+    border-radius: 10%;
+    list-style: none;
+}
+.card-img-top.poison {
+    background: rgb(130, 175, 189) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.poison {
+    background: rgb(130, 175, 189);
+    border: 1px solid rgb(130, 175, 189);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.ground {
+    background: rgb(136, 130, 94) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.ground {
+    background: rgb(136, 130, 94);
+    border: 1px solid rgb(136, 130, 94);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.fighting {
+    background: rgb(218, 153, 70) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.fighting {
+    background: rgb(218, 153, 70);
+    border: 1px solid rgb(218, 153, 70);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.psychic {
+    background: rgb(112, 62, 62) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.psychic {
+    background: rgb(112, 62, 62);
+    border: 1px solid rgb(112, 62, 62);
+    border-radius: 10%;
+    list-style: none;
+}
+
+
+.card-img-top.rock {
+    background: rgb(161, 161, 161) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.rock {
+    background: rgb(161, 161, 161);
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.ghost {
+    background: rgb(71, 134, 120) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.ghost {
+    background: rgb(71, 134, 120);
+    border: 1px solid rgb(71, 134, 120);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.ice {
+    background: rgb(187, 243, 231) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.ice {
+    background: rgb(187, 243, 231);
+    border: 1px solid rgb(187, 243, 231);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.dragon {
+    background: rgb(236, 133, 48) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.dragon {
+    background: rgb(236, 133, 48);
+    border: 1px solid rgb(236, 133, 48);
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.steel {
+    background: rgb(128, 128, 128) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.steel {
+    background: rgb(128, 128, 128);
+    border: 1px solid rgb(128, 128, 128);
+    color: white;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.dark {
+    background: rgb(0, 0,0) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+.card-text button.dark {
+    background: rgb(0, 0,0);
+    border: 1px solid rgb(0, 0,0);
+    color: white;
+    border-radius: 10%;
+    list-style: none;
+}
+
+.card-img-top.flying {
+    background: rgb(95,159,159) url("../img/pokebola.png");
+    background-size: 286px 300px;
+}
+
+.card-text button.flying {
+    background: rgb(95,159,159);
+    border: 1px solid rgb(95,159,159);
+    border-radius: 10%;
+    list-style: none;
+}
+ 
+ 
+   

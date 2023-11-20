@@ -14,6 +14,9 @@ namespace PainelPokemon.Data
 
         public DbSet<FavoritePokemon> FavoritePokemons { get; set; }
 
+
+        public DbSet<TypePokemon> TypePokemons { get; set; }
+
         public PokeContext(DbContextOptions<PokeContext> options) : base(options)
         { }
 
@@ -27,6 +30,7 @@ namespace PainelPokemon.Data
             modelBuilder.ApplyConfiguration(new UserMap());
             modelBuilder.ApplyConfiguration(new PokemonUnityMap());
             modelBuilder.ApplyConfiguration(new FavoritePokemonMap());
+            modelBuilder.Entity<TypePokemon>().HasNoKey();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PainelPokemon.Data;
 using PainelPokemon.Models.Users;
 
@@ -26,7 +27,7 @@ namespace PainelPokemon.Controllers
         public ActionResult Login(string email, string password)
         {
             
-            var user = _pokeContext.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            var user = _pokeContext.Users.AsNoTracking().FirstOrDefault(u => u.Email == email && u.Password == password);
 
             if (user != null)
 

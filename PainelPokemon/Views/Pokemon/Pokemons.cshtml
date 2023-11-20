@@ -11,45 +11,36 @@
     
     @if (Model != null)
     {
-        <table class="table table-bordered table-striped table-sm">
-            <thead>
-                <tr>
-                    <th>Order</th>
-                    <th>Name</th>
-                    <th>Weight</th>
-                    <th>Image</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Pokemon)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Weight)</td>
-                        <td><img src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)"></td>
-                        @{
-                            var userId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
-                        }
-
-
-                        @if (!string.IsNullOrEmpty(userId))
-                        {
-                            <td>
-                                <a asp-controller="Pokemon" asp-action="AddFavoritePokemon" asp-route-id="@item.Id">
-                                    <button class="btn-warning" type="submit">Favoritar</button>
-                                </a>
-                            </td>
-                        }
-                       
-                        
-                    </tr>
-                }
-            </tbody>
-        </table>
-        
+        @foreach (var item in Model.Pokemon)
+        {
+            <div class="card" >
+                <img class="card-img-top @item.Type[0].Type.Name" src="@Html.DisplayFor(modelItem => item.Sprites.FrontDefault)" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+                    <strong>Tipos:</strong>
+                    <ol class="card-text">
+                            
+                    @for(int i=0;i<item.Type.Length;i++)
+                    {
+                            <button class="@item.Type[i].Type.Name">@Html.DisplayFor(modelItem => item.Type[i].Type.Name)</button>
+                            }
+                    </ol>
+                  
+                    @{
+                        var userId = @HttpContextAccessor.HttpContext.Session.GetString("UserId");
+                    }
+                    @if (!string.IsNullOrEmpty(userId))
+                    {
+ 
+                            <a asp-controller="Pokemon" asp-action="AddFavoritePokemon" asp-route-id="@item.Id">
+                                <button class="btn-warning" type="submit">Favoritar</button>
+                            </a>
+                    }
+                </div>
+            </div>
+        }
     }
-
+    <br />
 
     <a asp-controller="Pokemon" asp-action="Pokemons" asp-route-urlPast="@Model?.Pokemons.Previous">
         <button class="btn-warning" type="submit">Previous</button>
@@ -59,3 +50,4 @@
     </a>
   
 </div>
+

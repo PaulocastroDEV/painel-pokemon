@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PainelPokemon.Models.Users;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PainelPokemon.Models.Pokemons
 {
@@ -18,10 +19,17 @@ namespace PainelPokemon.Models.Pokemons
         [JsonProperty("sprites")]
         public Sprites Sprites { get; private set; }
 
+        [NotMapped]
+        [JsonProperty("types")]
+        public TypesPokemons[] Type { get; private set; }
+
         
-        
+
+
+
+
 
         public ICollection<FavoritePokemon> FavoritedByUsers { get; set; } = new List<FavoritePokemon>();
     }
-
+   
 }
